@@ -12,7 +12,7 @@ void editeur(SDL_Surface* ecran){
     SDL_Surface *img_rouge = NULL, *img_bleu = NULL, *rougebmp = NULL, *img_vert = NULL;
     SDL_Surface *vertbmp = NULL, *table_noeud= NULL, *table_routeur = NULL, *creationPaquet = NULL;
     SDL_Surface *elementImg = NULL, *img_router = NULL, *img_noeud = NULL;
-    SDL_Surface *img_lien2 = NULL, *img_lien1 = NULL;
+    SDL_Surface *img_lien2 = NULL, *img_lien1 = NULL, *img_commut= NULL;
 
     SDL_Rect posElement;
 
@@ -27,11 +27,13 @@ void editeur(SDL_Surface* ecran){
     img_lien1 = SDL_LoadBMP("lien1.bmp");
     img_lien2 = SDL_LoadBMP("lien2.bmp");
     img_noeud = SDL_LoadBMP("pc.bmp");
+    img_commut = SDL_LoadBMP("commutateur.bmp");
     rougebmp = SDL_LoadBMP("rouge.bmp");
     vertbmp = SDL_LoadBMP("vert.bmp");
     table_noeud = SDL_LoadBMP("table_noeud.bmp");
     creationPaquet = SDL_LoadBMP("creationPaquet.bmp");
     table_routeur = SDL_LoadBMP("table_routeur.bmp");
+
 //PERMET DE POSITIONNER LES ELEMENTS SUR A CARTE HORZON(G ou D)|VERTI(H ou B)
     //HAUT
     carte[12][6]=NOEUD;
@@ -41,7 +43,8 @@ void editeur(SDL_Surface* ecran){
     carte[12][10]=LIENS_UN;
     carte[12][11]=VOYANT_VERT;
     //CENTRE
-    carte[12][12]=ROUTER;
+
+    carte[12][12]=COMMUTATEUR;
 
     //BAS
     carte[12][13]=VOYANT_VERT;
@@ -64,9 +67,16 @@ void editeur(SDL_Surface* ecran){
     carte[13][12]=VOYANT_VERT;
     carte[14][12]=LIENS;
     carte[15][12]=VOYANT_VERT;
-    carte[16][12]=LIENS;
+    carte[16][12]=ROUTER;
     carte[17][12]=VOYANT_VERT;
-    carte[18][12]=NOEUD;
+
+    carte[18][12]=LIENS;
+    carte[19][12]=VOYANT_VERT;
+    carte[20][12]=COMMUTATEUR;
+    carte[21][12]=VOYANT_VERT;
+    carte[22][12]=LIENS;
+    carte[23][12]=VOYANT_VERT;
+    carte[24][12]=NOEUD;
     //
     carte[0][19]=PARQUET;
     carte[20][0]=TABLE_ROUTEUR;
@@ -74,7 +84,7 @@ void editeur(SDL_Surface* ecran){
     carte[0][8]=TABLE_NOEUD;
     carte[9][1]=TABLE_NOEUD;
     carte[9][19]=TABLE_NOEUD;
-    carte[19][10]=TABLE_NOEUD;
+    carte[25][10]=TABLE_NOEUD;
 
     // Effacement de l'écran
     SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
@@ -91,6 +101,9 @@ void editeur(SDL_Surface* ecran){
             switch(carte[i][j]){
                     case VIDE:
 
+                    break;
+                    case COMMUTATEUR:
+                        SDL_BlitSurface(img_commut, NULL, ecran, &posElement);
                     break;
                     case NOEUD:
                         SDL_BlitSurface(img_noeud, NULL, ecran, &posElement);
@@ -142,6 +155,8 @@ void editeur(SDL_Surface* ecran){
     SDL_FreeSurface(table_routeur);
     SDL_FreeSurface(img_lien2);
     SDL_FreeSurface(img_lien1);
+    SDL_FreeSurface(img_commut);
+
 }
 
 

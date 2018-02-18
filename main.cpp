@@ -47,13 +47,13 @@ int main(int argc, char *argv[]){
     //Label ou nom de la fenetre
     SDL_WM_SetCaption("Projet Simulateur Reseaux", NULL);
 /* Chargement de la police */
-    police=TTF_OpenFont("timesbd.ttf", 14);
+    police=TTF_OpenFont("timesbd.ttf", 11);
 	if(police == NULL)
 	{
 		fprintf(stderr,"Erreur police : %s",TTF_GetError());
 		exit(EXIT_FAILURE);
 	}
-    lireDonneeZoneTexte(ecran,police,chaine,"Projet Simulateur Reseaux","Le Site du Zer0",99);
+    lireDonneeZoneTexte(ecran,police,chaine,"Projet Simulateur Reseaux","192.168.1.1",99);
 
     positionMenu.x = 0;
     positionMenu.y = 0;
@@ -74,13 +74,52 @@ int main(int argc, char *argv[]){
                 texteAffiche= TTF_RenderText_Solid(police, texte, couleurNoire);
 
                 SDL_BlitSurface(menu, NULL, ecran, &positionMenu);
+
+                int carteText[NB_BLOCS_LARGEUR][NB_BLOCS_HAUTEUR ] = {0};
+                int im,jm;
+
+                //station 1 HAUT
+                carteText[9][2]=1;
+                //station 2 GAUCHE
+                carteText[0][9]=1;
+                //station 3 DROITE
+                carteText[25][11]=1;
+                //station 4 BAS
+                carteText[9][20]=1;
+                 //ROUTER
+                carteText[20][1]=1;
+
+
+
                 //position texte
-                position.x = 1 * TAILLE_BLOC;
-                position.y = 1 * TAILLE_BLOC;
+                    for (im = 0 ; im < NB_BLOCS_LARGEUR ; im++){
+                        for (jm = 0 ; jm < NB_BLOCS_HAUTEUR ; jm++){
+                            position.x = im * TAILLE_BLOC;
+                            position.y = jm * TAILLE_BLOC;
+                            switch(carteText[im][jm]){
+                                case 0:
 
-                SDL_BlitSurface(texteAffiche, NULL, ecran, &position);
+                                break;
+                                case 1:
+                                    SDL_BlitSurface(texteAffiche, NULL, ecran, &position);
+                                break;
+                                case 2:
+                                    SDL_BlitSurface(texteAffiche, NULL, ecran, &position);
+                                break;
+                                case 3:
+                                    SDL_BlitSurface(texteAffiche, NULL, ecran, &position);
+                                break;
+                                case 4:
+                                    SDL_BlitSurface(texteAffiche, NULL, ecran, &position);
+                                break;
+                                case 5:
+                                    SDL_BlitSurface(texteAffiche, NULL, ecran, &position);
+                                break;
 
+                            }
 
+                        }
+                    }
 
                 SDL_Flip(ecran);
 
