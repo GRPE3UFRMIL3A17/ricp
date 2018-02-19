@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1519041597 source:f:\elvis\cour informatique\campus\cour mi licence l3\1er semestre\fondamentaux des réseaux\projet\reseaux\main.cpp
+1519043220 source:f:\elvis\cour informatique\campus\cour mi licence l3\1er semestre\fondamentaux des réseaux\projet\reseaux\main.cpp
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -219,36 +219,6 @@
 	<SDL/SDL.h>
 
 1518957281 source:f:\elvis\cour informatique\campus\cour mi licence l3\1er semestre\fondamentaux des réseaux\projet\reseaux\zonetexte.cpp
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<SDL/SDL.h>
-	<SDL/SDL_ttf.h>
-	"zonetexte.h"
-
-1519041546 source:g:\reseaux\fonction.cpp
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<SDL/SDL.h>
-	<SDL/SDL_ttf.h>
-	"fonction.h"
-
-1519040102 g:\reseaux\fonction.h
-
-1519041598 source:g:\reseaux\main.cpp
-	<stdlib.h>
-	<stdio.h>
-	<string.h>
-	<SDL/SDL.h>
-	<SDL/SDL_ttf.h>
-	"fonction.h"
-	"zonetexte.h"
-
-1518953758 g:\reseaux\zonetexte.h
-	<SDL/SDL.h>
-
-1518957282 source:g:\reseaux\zonetexte.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -24,6 +24,7 @@ int main(int argc, char *argv[]){
     char texte[20] = "";
     char chaine[100] = "";
     int continuer = 1;
+    char chaine1[100] = "";
 
 // Chargement de la vidéo, de l'audio et du timer
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER ) == -1)
@@ -53,7 +54,10 @@ int main(int argc, char *argv[]){
 		fprintf(stderr,"Erreur police : %s",TTF_GetError());
 		exit(EXIT_FAILURE);
 	}
-    lireDonneeZoneTexte(ecran,police,chaine,"Projet Simulateur Reseaux","192.168.1.1",99);
+    //demande IP source*/
+    lireDonneeZoneTexte(ecran,police,chaine,"DONNER ADRESSE IP SOURCE","192.168.1.1",99);
+     //demande IP cible*/
+    lireDonneeZoneTexte(ecran,police,chaine1,"DONNER ADRESSE IP CIBLE","192.168.1.1",99);
 
     positionMenu.x = 0;
     positionMenu.y = 0;
