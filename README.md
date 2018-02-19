@@ -1,18 +1,11 @@
 # ricp
 Logiciel en C++ de Simulation d'un Réseaux Informatique à Commutation de Paquet
 
+Projet de Fondamentaux des réseaux et de Génie Logiciel  L3 Sciences Informatiques 2017 UFHB de Cocody.
 
-Projet de Reseau de M1 Informatique AIGLE à l'UM2.
-=============
-Application d'échange de fichier en C++, via TCP, avec utilisation de threads. 
-
+logiciel permettant de simuler le fonctionnement d’un réseau informatique a commutation de paquet.
 
 Utilisation
-=============
-1- Pour compiler, utiliser simplement "make client", et "make serveur". Les classes sockets jointes sont normalement déjà compilées, mais selon votre système il est possible que vous ayez à les recompiler. Utilisez alors "make sock.o" et "make socketdist.o".
+1- Déclaration d’un réseau,entrer l'adresse IP source et l'adresse IP destinataire puis cliquer ENTRER.
 
-2- Pour lancer les application, lancer d'abord le serveur, simplement "./serveur", puis lancer les clients, en leur passant en paramètre l'adresse du serveur, par exemple "./client 127.0.0.1". Le port est fixé.
-
-3- Les dossiers pour stocker les fichiers des clients et du serveur doivent être présent dans le même répertoire que l'application. C'est à dire que le dossier FichiersServeur doit être dans le même répertoire que Serveur, idem pour FichiersClient qui doit être dans le même repertoire que "Client".
-
-4-Pour quitter l'application, fermer d'abord les clients avant de fermer le serveur.
+2-Pour quitter l'application, fermer d'abord les fenetres appuyer sur Echap.
