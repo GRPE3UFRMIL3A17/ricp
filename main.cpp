@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 
     //SDL_Delay(6000);
 
-// Le pointeur qui va stocker la surface de l'écran , message
+// Le pointeur qui va stocker la surface de l'Ã©cran , message
     SDL_Surface *ecran = NULL, *menu= NULL, *texteAffiche = NULL;
     //variable position
     SDL_Rect positionMenu, position;
@@ -25,8 +25,27 @@ int main(int argc, char *argv[]){
     char chaine[100] = "";
     int continuer = 1;
     char chaine1[100] = "";
+	
+	    //creation var struct noeud
+        Noeud station_1;
+        Noeud station_2;
+        Noeud station_3;
+        Noeud station_4;
 
-// Chargement de la vidéo, de l'audio et du timer
+        sprintf(station_1.addresseIP, "192.168.1.1");
+        sprintf(station_1.addresseMac, "192.168.2.1");
+
+        sprintf(station_2.addresseIP, "192.168.2.1");
+        sprintf(station_3.addresseMac, "192.168.1.1");
+
+        sprintf(station_3.addresseIP, "192.168.3.1");
+        sprintf(station_3.addresseMac, "192.168.1.1");
+
+        sprintf(station_4.addresseIP, "192.168.4.1");
+        sprintf(station_4.addresseMac, "192.168.1.1");
+	
+
+// Chargement de la vidÃ©o, de l'audio et du timer
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER ) == -1)
 	{
 		fprintf(stderr,"Erreur lors de l'initialisation de la SDL : %s\n",SDL_GetError());
@@ -40,7 +59,7 @@ int main(int argc, char *argv[]){
 	}
 
 
-// Chargement de l'icône AVANT SDL_SetVideoMode */
+// Chargement de l'icÃ´ne AVANT SDL_SetVideoMode */
     SDL_WM_SetIcon(SDL_LoadBMP("pc.bmp"), NULL);
 
     ecran = SDL_SetVideoMode(LARGEUR_FENETRE, HAUTEUR_FENETRE, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
