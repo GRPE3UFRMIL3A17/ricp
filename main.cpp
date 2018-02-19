@@ -31,18 +31,17 @@ int main(int argc, char *argv[]){
         Noeud station_2;
         Noeud station_3;
         Noeud station_4;
-
-        sprintf(station_1.addresseIP, "192.168.1.1");
-        sprintf(station_1.addresseMac, "192.168.2.1");
+ sprintf(station_1.addresseIP, "192.168.1.1");
+        sprintf(station_1.addresseMac, "00:11:11:11:11:01");
 
         sprintf(station_2.addresseIP, "192.168.2.1");
-        sprintf(station_3.addresseMac, "192.168.1.1");
+        sprintf(station_2.addresseMac, "00:22:22:22:22:01");
 
         sprintf(station_3.addresseIP, "192.168.3.1");
-        sprintf(station_3.addresseMac, "192.168.1.1");
+        sprintf(station_3.addresseMac, "00:33:33:33:33:01");
 
         sprintf(station_4.addresseIP, "192.168.4.1");
-        sprintf(station_4.addresseMac, "192.168.1.1");
+        sprintf(station_4.addresseMac, "00:44:44:44:44:01");
 	
 
 // Chargement de la vidéo, de l'audio et du timer
