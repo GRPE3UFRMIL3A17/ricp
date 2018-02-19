@@ -27,6 +27,12 @@
 
 
     //
+    typedef struct
+    {
+        char addresseIP[20];
+        char addresseMac[20];
+
+    }Noeud;
 
     enum {VIDE, NOEUD, NOEUD1, NOEUD2, NOEUD3, NOEUD4, ROUTER, LIENS, LIENS_UN, VOYANT_VERT, VOYANT_ROUGE, PARQUET, TABLE_ROUTEUR, TABLE_NOEUD, COMMUTATEUR};
 
@@ -36,5 +42,5 @@
 
     void pause();
 
-#endif // FONCTION_H_INCLUDED
 
+#endif // FONCTION_H_INCLUDED
