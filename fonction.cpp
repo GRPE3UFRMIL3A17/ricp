@@ -13,6 +13,7 @@ void editeur(SDL_Surface* ecran){
     SDL_Surface *vertbmp = NULL, *table_noeud= NULL, *table_routeur = NULL, *creationPaquet = NULL;
     SDL_Surface *elementImg = NULL, *img_router = NULL, *img_noeud = NULL;
     SDL_Surface *img_lien2 = NULL, *img_lien1 = NULL, *img_commut= NULL;
+    SDL_Surface *img_station1 = NULL, *img_station2 = NULL, *img_station3= NULL, *img_station4= NULL;
 
     SDL_Rect posElement;
 
@@ -32,7 +33,12 @@ void editeur(SDL_Surface* ecran){
     vertbmp = SDL_LoadBMP("vert.bmp");
     table_noeud = SDL_LoadBMP("table_noeud.bmp");
     creationPaquet = SDL_LoadBMP("creationPaquet.bmp");
-    table_routeur = SDL_LoadBMP("table_routeur.bmp");
+    table_routeur = SDL_LoadBMP("router_table.bmp");
+
+    img_station1 = SDL_LoadBMP("station1.bmp");
+    img_station2 = SDL_LoadBMP("station2.bmp");
+    img_station3 = SDL_LoadBMP("station3.bmp");
+    img_station4 = SDL_LoadBMP("station4.bmp");
 
 //PERMET DE POSITIONNER LES ELEMENTS SUR A CARTE HORZON(G ou D)|VERTI(H ou B)
     //HAUT
@@ -81,10 +87,10 @@ void editeur(SDL_Surface* ecran){
     carte[0][19]=PARQUET;
     carte[20][0]=TABLE_ROUTEUR;
 
-    carte[0][8]=TABLE_NOEUD;
-    carte[9][1]=TABLE_NOEUD;
-    carte[9][19]=TABLE_NOEUD;
-    carte[25][10]=TABLE_NOEUD;
+    carte[0][7]=NOEUD1;
+    carte[9][0]=NOEUD2;
+    carte[9][19]=NOEUD3;
+    carte[25][10]=NOEUD4;
 
     // Effacement de l'écran
     SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
@@ -107,6 +113,18 @@ void editeur(SDL_Surface* ecran){
                     break;
                     case NOEUD:
                         SDL_BlitSurface(img_noeud, NULL, ecran, &posElement);
+                    break;
+                    case NOEUD1:
+                        SDL_BlitSurface(img_station1, NULL, ecran, &posElement);
+                    break;
+                    case NOEUD2:
+                        SDL_BlitSurface(img_station2, NULL, ecran, &posElement);
+                    break;
+                    case NOEUD3:
+                        SDL_BlitSurface(img_station3, NULL, ecran, &posElement);
+                    break;
+                    case NOEUD4:
+                        SDL_BlitSurface(img_station4, NULL, ecran, &posElement);
                     break;
                     case ROUTER:
                         SDL_BlitSurface(img_router, NULL, ecran, &posElement);
@@ -155,7 +173,11 @@ void editeur(SDL_Surface* ecran){
     SDL_FreeSurface(table_routeur);
     SDL_FreeSurface(img_lien2);
     SDL_FreeSurface(img_lien1);
-    SDL_FreeSurface(img_commut);
+
+    SDL_FreeSurface(img_station1);
+    SDL_FreeSurface(img_station2);
+    SDL_FreeSurface(img_station3);
+    SDL_FreeSurface(img_station4);
 
 }
 

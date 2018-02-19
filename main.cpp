@@ -79,15 +79,15 @@ int main(int argc, char *argv[]){
                 int im,jm;
 
                 //station 1 HAUT
-                carteText[9][2]=1;
+                carteText[9][3]=1;
                 //station 2 GAUCHE
-                carteText[0][9]=1;
+                carteText[0][10]=1;
                 //station 3 DROITE
-                carteText[25][11]=1;
+                carteText[25][13]=1;
                 //station 4 BAS
-                carteText[9][20]=1;
+                carteText[9][22]=1;
                  //ROUTER
-                carteText[20][1]=1;
+                carteText[20][3]=1;
 
 
 
