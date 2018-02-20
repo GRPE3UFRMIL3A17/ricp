@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
     char chaine[100] = "";
     int continuer = 1;
     char chaine1[100] = "";
-	
+             //creation des noeud	
 	    //creation var struct noeud
         Noeud station_1;
         Noeud station_2;
